@@ -17,7 +17,7 @@ This project demonstrates how structured resume data can be transformed into an 
 
 ## Screenshots
 ![Overview](dashboard/dashboard_screenshots/overview.png)
-![Skills](dashboard/dashboard_screenshots/skills.png)
+![Skills](dashboard/dashboard_screenshots/skill_set.png)
 ![Experience](dashboard/dashboard_screenshots/experience.png)
 
 ## Files Included
