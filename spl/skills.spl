@@ -1,0 +1,5 @@
+index=resume_idx
+| spath path=skills{} output=skills
+| mvexpand skills
+| spath input=skills path=category output=category
+| stats count BY category
