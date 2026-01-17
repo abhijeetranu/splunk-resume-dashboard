@@ -1,0 +1,9 @@
+index=resume_idx 
+| spath path=experience{} output=experience 
+| mvexpand experience 
+| spath input=experience path=company output=company 
+| spath input=experience path=achievements{} output=achievements 
+| mvexpand achievements 
+| spath input=achievements path=metric output=metric 
+| spath input=achievements path=impact output=impact 
+| table company metric impact
