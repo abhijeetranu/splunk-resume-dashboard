@@ -1,0 +1,6 @@
+index=resume_idx 
+| spath path=experience{} output=experience 
+| mvexpand experience 
+| spath input=experience path=use_cases{} output=use_case 
+| mvexpand use_case 
+| stats count BY use_case
