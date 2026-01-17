@@ -1,0 +1,14 @@
+index=resume_idx
+| spath path=experience{} output=experience
+| mvexpand experience
+| spath input=experience path=company output=company
+| spath input=experience path=start_date output=start_date
+| spath input=experience path=end_date output=end_date
+| eval start_year=tonumber(substr(start_date,1,4))
+| eval end_year=case(
+    end_date="Present", 2026,
+    isnotnull(end_date), tonumber(substr(end_date,1,4))
+  )
+| where isnotnull(start_year) AND isnotnull(end_year)
+| eval duration=end_year-start_year
+| stats sum(duration) AS Years BY company
